@@ -1,64 +1,28 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { TrendingUp, MapPinned, Headset, Boxes } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function WhyPartner() {
   const sectionRef = useRef(null);
-  const mainImgRef = useRef(null);
-  const floatImgRef = useRef(null);
 
-  useEffect(() => {
-    if (!sectionRef.current) return;
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
 
-    const ctx = gsap.context(() => {
-      /* ================= REVEAL ================= */
-      gsap.fromTo(
-        ".partner-animate",
-        { opacity: 0, y: 70 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.18,
-          duration: 1,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-          },
-        }
-      );
+  /* PARALLAX (smooth & responsive) */
+  const mainImgY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const floatImgY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
-      /* ================= PARALLAX ================= */
-      gsap.to(mainImgRef.current, {
-        y: -50,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-
-      gsap.to(floatImgRef.current, {
-        y: -80,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  /* FADE UP */
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
 
   return (
     <section
@@ -66,47 +30,59 @@ export default function WhyPartner() {
       className="relative py-32 overflow-hidden bg-[#fff7f7]"
     >
       {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-red-200/40 blur-[180px]" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-100/40 blur-[140px]" />
       </div>
 
       {/* BRAND STAMP */}
-      <h2 className="absolute top-12 left-1/2 -translate-x-1/2 text-[22vw] font-extrabold text-red-600/5 tracking-tight select-none">
+      <h2 className="absolute top-12 left-1/2 -translate-x-1/2 text-[22vw] font-extrabold text-red-600/5 tracking-tight select-none pointer-events-none">
         PARTNER
       </h2>
 
       <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* LEFT – VISUAL */}
-        <div className="partner-animate relative flex justify-center">
-          <div
-            ref={mainImgRef}
-            className="relative rounded-[32px] overflow-hidden shadow-2xl"
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="relative flex justify-center"
+        >
+          <motion.div
+            style={{ y: mainImgY }}
+            className="relative rounded-[32px] overflow-hidden shadow-2xl will-change-transform"
           >
             <img
               src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
               alt="Burly Distribution Network"
               className="w-full max-w-[520px] h-[420px] object-cover"
             />
-          </div>
+          </motion.div>
 
-          <div
-            ref={floatImgRef}
-            className="absolute -bottom-12 -right-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white"
+          <motion.div
+            style={{ y: floatImgY }}
+            className="absolute -bottom-12 -right-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white will-change-transform"
           >
             <img
               src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
               alt="Sales & Distributor Support"
               className="w-56 h-40 object-cover"
             />
-          </div>
+          </motion.div>
 
           <div className="absolute -top-6 -left-6 w-28 h-28 rounded-full bg-red-600/10" />
-        </div>
+        </motion.div>
 
-        {/* RIGHT – CONTENT (UNCHANGED TEXT) */}
-        <div className="space-y-10">
-          <div className="partner-animate">
+        {/* RIGHT – CONTENT */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="space-y-10"
+        >
+          <div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
               A Solid Partnership Built for
               <br />
@@ -133,8 +109,8 @@ export default function WhyPartner() {
             </p>
           </div>
 
-          {/* BENEFITS – SAME CONTENT */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 partner-animate">
+          {/* BENEFITS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               {
                 icon: TrendingUp,
@@ -159,8 +135,12 @@ export default function WhyPartner() {
             ].map((item, i) => {
               const Icon = item.icon;
               return (
-                <div
+                <motion.div
                   key={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
                   className="flex gap-4 items-start bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
                   <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center">
@@ -173,15 +153,21 @@ export default function WhyPartner() {
                       {item.desc}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* ================= TRUST BOX ================= */}
-      <div className="relative max-w-5xl mx-auto px-6 mt-28 partner-animate">
+      {/* TRUST BOX */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="relative max-w-5xl mx-auto px-6 mt-28"
+      >
         <div className="relative rounded-3xl p-[2px] bg-gradient-to-r from-red-300 via-red-200 to-transparent">
           <div className="bg-white rounded-3xl px-10 py-12 text-center shadow-xl">
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -194,7 +180,7 @@ export default function WhyPartner() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
