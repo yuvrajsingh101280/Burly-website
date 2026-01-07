@@ -1,11 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { PhoneCall, Users, FileSignature, Rocket } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
@@ -31,75 +26,23 @@ const steps = [
 ];
 
 export default function NextSteps() {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      /* ===== SECTION REVEAL ===== */
-      gsap.from(".steps-header", {
-        opacity: 0,
-        y: 60,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      });
-
-      /* ===== CARDS FLOW ===== */
-      gsap.from(cardsRef.current, {
-        opacity: 0,
-        y: 80,
-        stagger: 0.2,
-        duration: 0.9,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
-      });
-
-      /* ===== PARALLAX FEEL ===== */
-      cardsRef.current.forEach((card, i) => {
-        gsap.to(card, {
-          y: i % 2 === 0 ? -30 : -50,
-          ease: "none",
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-32 overflow-hidden bg-[#fff7f7]"
-    >
-      {/* BACKGROUND DEPTH */}
-      <div className="absolute inset-0">
+    <section className="relative py-32 overflow-hidden bg-[#fff7f7]">
+      {/* BACKGROUND BLOBS */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-red-200/40 blur-[180px]" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-100/40 blur-[140px]" />
       </div>
 
-      {/* BRAND STAMP */}
-      <h2 className="absolute top-16 left-1/2 -translate-x-1/2 text-[20vw] font-extrabold text-red-600/5 tracking-tight select-none">
+      {/* WATERMARK */}
+      <h2 className="absolute top-16 left-1/2 -translate-x-1/2 text-[20vw] font-extrabold text-red-600/5 tracking-tight select-none z-0 pointer-events-none">
         STEPS
       </h2>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* HEADER */}
-        <div className="steps-header text-center max-w-3xl mx-auto mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-24">
           <span className="text-sm font-bold tracking-widest text-red-600 uppercase">
             How It Works
           </span>
@@ -114,7 +57,7 @@ export default function NextSteps() {
 
         {/* TIMELINE */}
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* LINE (desktop) */}
+          {/* LINE */}
           <div className="hidden md:block absolute top-1/2 left-0 right-0 h-[2px] bg-red-200" />
 
           {steps.map((step, i) => {
@@ -122,10 +65,9 @@ export default function NextSteps() {
             return (
               <div
                 key={i}
-                ref={(el) => (cardsRef.current[i] = el)}
-                className="relative bg-white rounded-3xl p-8 text-center border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all"
+                className="relative bg-white rounded-3xl p-8 text-center border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
               >
-                {/* STEP DOT */}
+                {/* STEP NUMBER */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
                   {i + 1}
                 </div>
@@ -146,7 +88,7 @@ export default function NextSteps() {
           })}
         </div>
 
-        {/* END PROMISE */}
+        {/* END MESSAGE */}
         <div className="mt-32 text-center">
           <div className="inline-block rounded-3xl p-[2px] bg-gradient-to-r from-red-300 via-red-200 to-transparent">
             <div className="bg-white rounded-3xl px-12 py-10 shadow-xl">
