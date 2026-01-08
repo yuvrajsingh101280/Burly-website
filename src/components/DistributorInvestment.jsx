@@ -29,7 +29,7 @@ const plans = [
     features: [
       "5 cartons of all products (90–100 cartons approx.)",
       "GST included",
-      "Distributor pays transportation",
+      "Company  pays transportation",
       "Dedicated salesperson assigned",
       "Light board & posters",
       "Social media marketing support",
