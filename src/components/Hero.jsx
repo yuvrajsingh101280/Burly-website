@@ -94,7 +94,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://forms.google.com"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdkuU2O2CGEevGUbkvgKU4XEzEnUtYFf2oK9M-B39_WWGI5RA/viewform?usp=header"
               target="_blank"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}

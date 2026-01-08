@@ -128,7 +128,7 @@ export default function Navbar() {
                 ))}
 
                 <a
-                  href="https://forms.google.com"
+                  href="https://forms.gle/qRfiwEoJybW2D28U9r"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 inline-flex justify-center rounded-full bg-red-600 px-6 py-3 text-white font-bold"
