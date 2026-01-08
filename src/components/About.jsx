@@ -29,6 +29,25 @@ export default function About() {
     return () => ctx.revert();
   }, []);
 
+  const points = [
+    {
+      title: "Manufacturer Focus",
+      desc: "In-house manufacturing ensures strict control over raw materials, formulations, and production standards for consistent output.",
+    },
+    {
+      title: "Consistent Quality",
+      desc: "Each product is developed and tested to deliver reliable cleaning performance, safety, and long-term customer satisfaction.",
+    },
+    {
+      title: "Wide Product Range",
+      desc: "A complete portfolio covering daily home care needs, designed to serve households, institutions, and commercial buyers.",
+    },
+    {
+      title: "Distributor Support",
+      desc: "Strong backend support, marketing assistance, and supply reliability to help distributors grow steadily in their territories.",
+    },
+  ];
+
   return (
     <section
       ref={sectionRef}
@@ -78,12 +97,7 @@ export default function About() {
 
         {/* ================= RIGHT: CARDS ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {[
-            "Manufacturer Focus",
-            "Consistent Quality",
-            "Wide Product Range",
-            "Distributor Support",
-          ].map((item, i) => (
+          {points.map((item, i) => (
             <div
               key={i}
               className="about-reveal relative rounded-3xl bg-white p-8 sm:p-10 pt-14 ring-1 ring-black/5 shadow-sm hover:shadow-xl transition-all duration-300"
@@ -96,12 +110,11 @@ export default function About() {
               </div>
 
               <p className="text-lg sm:text-xl font-semibold text-gray-900">
-                {item}
+                {item.title}
               </p>
 
               <p className="mt-4 text-sm text-gray-600 leading-relaxed">
-                Built to meet real market demand with dependable supply and
-                professional support.
+                {item.desc}
               </p>
 
               {/* ACCENT LINE */}

@@ -18,6 +18,7 @@ import KitchenCleaner2 from "../assets/KitchenCleaner2.png"
 import LiquidSoap from "../assets/LiquidSoap.png"
 import CarWash from "../assets/CarWash.png"
 import burlyproductrange from "../assets/burly-product-range.png"
+import Toilet250 from "../assets/Toilet250.png"
 export const assets = {
     logo,
     hero2,
@@ -38,7 +39,8 @@ export const assets = {
     KitchenCleaner2,
     LiquidSoap,
     CarWash,
-    burlyproductrange
+    burlyproductrange,
+    Toilet250
 
 
 }

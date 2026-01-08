@@ -46,7 +46,7 @@ const plans = [
       "Dedicated salesperson assigned",
       "Light board & posters",
       "Social media marketing support",
-      "10% special discount",
+      "Upto 10% special discount",
       "Official distributorship agreement",
     ],
   },

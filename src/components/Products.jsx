@@ -15,7 +15,7 @@ const products = [
       {
         label: "250 ml",
         price: "₹42",
-        image: assets.Toilet1,
+        image: assets.Toilet250,
       },
       {
         label: "500 ml",
