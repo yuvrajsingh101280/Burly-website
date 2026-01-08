@@ -10,6 +10,7 @@ import NextSteps from "../components/NextSteps";
 import DistributorInvestment from "../components/DistributorInvestment";
 import Contact from "../components/Contat";
 import useSEO from "../seo/useSEO";
+import HomeSchema from "../seo/HomeSchema";
 
 const Home = () => {
   useSEO({
@@ -21,6 +22,7 @@ const Home = () => {
   });
   return (
     <>
+      <HomeSchema />
       <Hero />
       <About />
       <BrandParallax />
