@@ -42,7 +42,7 @@ export default function WhyPartner() {
         >
           <div className="relative rounded-[28px] overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
+              src="https://res.cloudinary.com/dwiaowohz/image/upload/v1767840227/photo-1586528116311-ad8dd3c8310d_r5tivd.jpg"
               alt="Burly Distribution Network"
               className="w-full max-w-[480px] md:max-w-[520px] h-[360px] md:h-[420px] object-cover"
             />
@@ -50,7 +50,7 @@ export default function WhyPartner() {
 
           <div className="absolute -bottom-10 -right-6 md:-right-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
             <img
-              src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
+              src="https://res.cloudinary.com/dwiaowohz/image/upload/v1767840336/photo-1600880292089-90a7e086ee0c_pzioz4.jpg"
               alt="Sales & Distributor Support"
               className="w-48 md:w-56 h-32 md:h-40 object-cover"
             />

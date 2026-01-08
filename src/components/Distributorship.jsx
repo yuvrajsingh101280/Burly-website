@@ -80,7 +80,7 @@ export default function Distributorship() {
             className="relative rounded-[32px] overflow-hidden shadow-2xl"
           >
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+              src="https://res.cloudinary.com/dwiaowohz/image/upload/v1767840463/photo-1600880292203-757bb62b4baf_uic5vn.jpg"
               alt="Distribution Partnership"
               className="w-full max-w-[480px] md:max-w-[520px] h-[360px] md:h-[420px] object-cover"
             />
