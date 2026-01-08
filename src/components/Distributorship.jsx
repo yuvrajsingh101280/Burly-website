@@ -12,37 +12,44 @@ export default function Distributorship() {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+    if (!sectionRef.current || !imageRef.current) return;
 
     const ctx = gsap.context(() => {
-      /* TEXT REVEAL */
+      /* ================= TEXT + CONTENT REVEAL ================= */
       gsap.fromTo(
         ".dist-animate",
-        { opacity: 0, y: 60 },
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          stagger: 0.18,
-          duration: 1,
-          ease: "power4.out",
+          stagger: 0.16,
+          duration: 0.9,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 75%",
+            toggleActions: "play none none reverse",
           },
         }
       );
 
-      /* IMAGE PARALLAX */
-      gsap.to(imageRef.current, {
-        y: -60,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      /* ================= IMAGE REVEAL (NO SCRUB) ================= */
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, y: 60, scale: 0.96 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -52,20 +59,20 @@ export default function Distributorship() {
     <section
       ref={sectionRef}
       id="distributor"
-      className="relative py-32 overflow-hidden bg-[#fff7f7]"
+      className="relative py-24 md:py-32 overflow-hidden bg-[#fff7f7]"
     >
       {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-red-200/40 blur-[180px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-100/40 blur-[140px]" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] md:w-[900px] h-[700px] md:h-[900px] bg-red-200/40 blur-[180px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] md:w-[500px] h-[400px] md:h-[500px] bg-red-100/40 blur-[140px]" />
       </div>
 
       {/* BRAND STAMP */}
-      <h2 className="absolute top-16 left-1/2 -translate-x-1/2 text-[22vw] font-extrabold tracking-tight text-red-600/5 select-none">
+      <h2 className="absolute top-12 md:top-16 left-1/2 -translate-x-1/2 text-[28vw] md:text-[22vw] font-extrabold tracking-tight text-red-600/5 select-none pointer-events-none">
         PARTNER
       </h2>
 
-      <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
         {/* IMAGE */}
         <div className="dist-animate relative flex justify-center">
           <div
@@ -75,22 +82,22 @@ export default function Distributorship() {
             <img
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
               alt="Distribution Partnership"
-              className="w-full max-w-[520px] h-[420px] object-cover"
+              className="w-full max-w-[480px] md:max-w-[520px] h-[360px] md:h-[420px] object-cover"
             />
           </div>
 
           {/* FLOAT ACCENT */}
-          <div className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-red-600/10" />
+          <div className="absolute -bottom-10 -left-10 w-24 md:w-28 h-24 md:h-28 rounded-full bg-red-600/10" />
         </div>
 
         {/* CONTENT */}
         <div className="space-y-8">
           <div className="dist-animate">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 leading-tight">
               Become a Burly Distributor
             </h2>
 
-            <p className="mt-6 text-gray-600 leading-relaxed">
+            <p className="mt-5 md:mt-6 text-gray-600 leading-relaxed">
               Burly Chem Products invites motivated and growth-oriented partners
               to join our expanding distributor network across India.
             </p>
@@ -103,7 +110,7 @@ export default function Distributorship() {
           </div>
 
           {/* BENEFITS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 dist-animate">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 dist-animate">
             {[
               { icon: TrendingUp, text: "Attractive Profit Margins" },
               { icon: MapPinned, text: "Exclusive Territory Rights" },
@@ -114,7 +121,7 @@ export default function Distributorship() {
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-xl transition"
                 >
                   <div className="w-11 h-11 rounded-full bg-red-50 flex items-center justify-center">
                     <Icon className="text-red-600" size={22} />

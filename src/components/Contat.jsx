@@ -96,7 +96,7 @@ export default function Contact() {
           <div className="absolute inset-0 -z-10 rounded-[36px] bg-gradient-to-br from-red-200/40 to-transparent blur-xl" />
 
           <form
-            action="https://formsubmit.co/burlychemproducts@gmail.com"
+            action="https://formspree.io/f/mrebnypj"
             method="POST"
             className="space-y-5"
           >

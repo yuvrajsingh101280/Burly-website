@@ -258,7 +258,7 @@ function ProductBlock({ product, flip }) {
         </Zoom>
 
         {/* PRICE */}
-        <div className="absolute bottom-4 right-4 bg-red-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg">
+        <div className="absolute  bottom-4 md:bottom-6 md:right-20 right-1 bg-red-600 text-white px-5 py-2 rounded-full text-sm md:text-xl font-bold shadow-lg">
           {product.variants[active].price}
         </div>
       </div>
