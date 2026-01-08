@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Loader from "./components/Loader";
+import Schema from "./seo/Schema";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -14,16 +15,19 @@ export default function App() {
   }, []);
 
   return (
-    <AnimatePresence>
-      {loading ? (
-        <Loader key="loader" />
-      ) : (
-        <Routes key="routes">
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
-        </Routes>
-      )}
-    </AnimatePresence>
+    <>
+      <Schema />
+      <AnimatePresence>
+        {loading ? (
+          <Loader key="loader" />
+        ) : (
+          <Routes key="routes">
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+          </Routes>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
