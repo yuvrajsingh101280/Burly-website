@@ -163,8 +163,19 @@ export default function Footer() {
       </div>
 
       {/* ================= BOTTOM BAR ================= */}
-      <div className="border-t py-4 text-center text-xs text-gray-500 px-4">
-        © {new Date().getFullYear()} Burly Chem Products. All rights reserved.
+      <div className="border-t py-4 text-center text-xs text-gray-500 px-4 flex flex-col sm:flex-row items-center justify-center gap-1">
+        <span>
+          © {new Date().getFullYear()} Burly Chem Products. All rights reserved.
+        </span>
+        <span className="hidden sm:inline">|</span>
+        <a
+          href="https://www.dreamforge.agency/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-gray-600 hover:text-red-600 transition"
+        >
+          Made by Dream Forge
+        </a>
       </div>
     </footer>
   );
