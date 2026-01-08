@@ -62,7 +62,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <a
-              href="https://forms.google.com"
+              href="https://forms.gle/qRfiwEoJybW2D28U9"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 inline-flex items-center justify-center rounded-full border-2 border-red-600 px-6 py-2 text-red-600 font-bold hover:bg-red-600 hover:text-white transition"
