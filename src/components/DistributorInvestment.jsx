@@ -135,7 +135,8 @@ export default function DistributorInvestment() {
               {/* CTA */}
               <div className="mt-8">
                 <a
-                  href="#contact"
+                  href="https://forms.gle/qRfiwEoJybW2D28U9"
+                  target="_blank"
                   className={`block text-center rounded-full px-6 py-3 font-bold transition ${
                     plan.highlight
                       ? "bg-red-600 text-white hover:bg-red-700"

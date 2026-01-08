@@ -149,7 +149,7 @@ export default function Distributorship() {
           {/* CTA */}
           <div className="dist-animate pt-4">
             <a
-              href="https://forms.google.com"
+              href="https://forms.gle/qRfiwEoJybW2D28U9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-red-600 px-12 py-4 text-white font-extrabold hover:bg-red-700 transition shadow-xl"
