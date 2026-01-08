@@ -1,6 +1,7 @@
 import { assets } from "../assets/assets";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -43,6 +44,18 @@ export default function Footer() {
           <p className="text-sm font-semibold text-red-600 mt-3 tracking-wide">
             Clean With Confidence
           </p>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/burlychemproducts/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-4 text-gray-600 hover:text-red-600 transition"
+            aria-label="Instagram"
+          >
+            <Instagram size={18} />
+            <span className="text-sm">Instagram</span>
+          </a>
         </div>
 
         {/* PRODUCTS */}
@@ -66,7 +79,7 @@ export default function Footer() {
             <li>Exclusive Territory</li>
             <li>
               <a
-                href="https://forms.google.com"
+                href="https://forms.gle/qRfiwEoJybW2D28U9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-2 text-red-600 font-semibold hover:underline"
