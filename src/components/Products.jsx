@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   {
-    name: "Toilet Cleaner",
+    name: " Burly Toilet Cleaner",
     variants: [
       {
         label: "250 ml",
@@ -35,7 +35,7 @@ const products = [
     ],
   },
   {
-    name: "Dishwash Gel",
+    name: " Burly Dishwash Gel",
     variants: [
       {
         label: "250 ml",
@@ -55,7 +55,7 @@ const products = [
     ],
   },
   {
-    name: "Liquid Detergent",
+    name: " Burly Liquid Detergent",
     variants: [
       {
         label: "1 Ltr",
@@ -70,7 +70,7 @@ const products = [
     ],
   },
   {
-    name: "Floor Cleaner",
+    name: "Burly Floor Cleaner",
     variants: [
       {
         label: "500 ml",
@@ -90,7 +90,7 @@ const products = [
     ],
   },
   {
-    name: "Glass Cleaner",
+    name: "Burly Glass Cleaner",
     variants: [
       {
         label: "500 ml",
@@ -105,7 +105,7 @@ const products = [
     ],
   },
   {
-    name: "Kitchen Cleaner",
+    name: " Burly Kitchen Cleaner",
     variants: [
       {
         label: "500 ml",
@@ -120,7 +120,7 @@ const products = [
     ],
   },
   {
-    name: "Liquid Soap",
+    name: "Burly Liquid Soap",
     variants: [
       {
         label: "5 Ltr",
@@ -130,7 +130,7 @@ const products = [
     ],
   },
   {
-    name: "Car Wash Shampoo",
+    name: "Burly Car Wash Shampoo",
     variants: [
       {
         label: "5 Ltr",
