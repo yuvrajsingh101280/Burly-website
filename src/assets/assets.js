@@ -19,6 +19,7 @@ import LiquidSoap from "../assets/LiquidSoap.png"
 import CarWash from "../assets/CarWash.png"
 import burlyproductrange from "../assets/burly-product-range.png"
 import Toilet250 from "../assets/Toilet250.png"
+import warehouse from "../assets/warehouse.jpeg"
 export const assets = {
     logo,
     hero2,
@@ -40,7 +41,8 @@ export const assets = {
     LiquidSoap,
     CarWash,
     burlyproductrange,
-    Toilet250
+    Toilet250,
+    warehouse
 
 
 }

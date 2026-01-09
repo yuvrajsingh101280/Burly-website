@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, MapPinned, Headset, Boxes } from "lucide-react";
+import { assets } from "../assets/assets";
 
 export default function WhyPartner() {
   const sectionRef = useRef(null);
@@ -42,7 +43,7 @@ export default function WhyPartner() {
         >
           <div className="relative rounded-[28px] overflow-hidden shadow-2xl">
             <img
-              src="https://res.cloudinary.com/dwiaowohz/image/upload/v1767840227/photo-1586528116311-ad8dd3c8310d_r5tivd.jpg"
+              src={assets.warehouse}
               alt="Burly Distribution Network"
               className="w-full max-w-[480px] md:max-w-[520px] h-[360px] md:h-[420px] object-cover"
             />
