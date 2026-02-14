@@ -74,7 +74,7 @@ const plans = [
       "Transportation : Priority Free Delivery",
       "Staff Support : Senior Territory Manager",
       "Branding Kit : Full Branding + LED Board",
-      "Extra Margin : Flat 10% Extra Discount On Distributor Price",
+      "Extra Margin : Flat 8% Extra Discount On Distributor Price",
     ],
   },
   // {

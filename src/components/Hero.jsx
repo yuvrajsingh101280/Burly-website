@@ -14,7 +14,7 @@ export default function Hero() {
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 60 },
-      { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
+      { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" },
     );
 
     gsap.fromTo(
@@ -27,7 +27,7 @@ export default function Hero() {
         duration: 1.4,
         ease: "power4.out",
         delay: 0.2,
-      }
+      },
     );
 
     // Subtle scroll depth
@@ -101,6 +101,16 @@ export default function Hero() {
               className="px-10 py-4 rounded-full border-2 border-red-600 text-red-600 font-semibold hover:bg-red-50 transition"
             >
               Become a Distributor
+            </motion.a>
+
+            {/* NEW ENQUIRY BUTTON */}
+            <motion.a
+              href="tel:+917631546903" // 🔥 Replace with your real number
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 rounded-full bg-gray-900 text-white font-semibold shadow-lg hover:bg-gray-800 transition"
+            >
+              Enquiry Now
             </motion.a>
           </div>
         </div>
