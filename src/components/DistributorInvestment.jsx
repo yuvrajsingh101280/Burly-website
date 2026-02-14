@@ -12,13 +12,13 @@ const plans = [
     title: "Starter Plan(Dealer)",
     price: "₹25,000",
     features: [
-      "Selected Products",
-      "Local Area",
-      "Dealer",
-      "Transportation:Paid by Dealer",
-      "Self-Managed",
-      "Flex & Posters",
-      "Retail Margin",
+      "Inventory : Selected Products",
+      "Area/Territory : Local Area",
+      "Role : Dealer",
+      "Transportation : Paid by Dealer",
+      "Staff Support : Self-Managed",
+      "Branding Kit : Flex & Posters",
+      "Extra Margin : Retail Margin",
     ],
   },
   // {
@@ -40,13 +40,13 @@ const plans = [
     highlight: true,
     badge: "Most Preferred",
     features: [
-      "5 cartons of all products",
-      "Single District",
-      "Distributor",
-      "Free Transportation",
-      "Dedicated Salesperson",
-      "Light Board & Posters",
-      "Wholesale + District Rights",
+      "Inventory : 5 cartons of all products",
+      "Area/Territory : Single District",
+      "Role : Distributor",
+      "Transportation : Free Transportation",
+      "Staff Support : Dedicated Salesperson",
+      "Branding Kit : Light Board & Posters",
+      "Extra Margin : Wholesale + District Rights",
     ],
   },
   // {
@@ -68,13 +68,13 @@ const plans = [
     title: "Super Stockist Plan (Elite)",
     price: "₹1,99,000",
     features: [
-      "10-12 Cartoons Of All Products",
-      "3-4 Districts (Exclusive)",
-      "Super Stockist",
-      "Priority Free Delivery",
-      "Senior Territory Manager",
-      "Full Branding + LED Board",
-      "Flat 10% Extra Discount On Distributor Price",
+      "Inventory : 10-12 Cartoons Of All Products",
+      "Area/Territory : 3-4 Districts (Exclusive)",
+      "Role : Super Stockist",
+      "Transportation : Priority Free Delivery",
+      "Staff Support : Senior Territory Manager",
+      "Branding Kit : Full Branding + LED Board",
+      "Extra Margin : Flat 10% Extra Discount On Distributor Price",
     ],
   },
   // {
@@ -162,15 +162,23 @@ export default function DistributorInvestment() {
               </p>
 
               <div className="mt-6 space-y-3">
-                {plan.features.map((f, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3 text-sm text-gray-700"
-                  >
-                    <CheckCircle size={18} className="text-green-600 mt-0.5" />
-                    <span>{f}</span>
-                  </div>
-                ))}
+                {plan.features.map((f, idx) => {
+                  const [label, value] = f.split(" : ");
+                  return (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-3 text-sm text-gray-700"
+                    >
+                      <CheckCircle
+                        size={18}
+                        className="text-green-600 mt-0.5"
+                      />
+                      <span>
+                        <span className="font-semibold">{label} :</span> {value}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* CTA */}
