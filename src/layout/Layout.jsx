@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppFloat from "../components/WhatsappFloat";
+import EnquiryFloat from "../components/EnquiryFloat";
 
 export default function Layout() {
   return (
@@ -10,6 +11,7 @@ export default function Layout() {
       <main className="flex-grow">
         <Outlet />
       </main>
+      <EnquiryFloat />
       <WhatsAppFloat />
       <Footer />
     </div>

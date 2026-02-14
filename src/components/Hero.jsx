@@ -104,14 +104,14 @@ export default function Hero() {
             </motion.a>
 
             {/* NEW ENQUIRY BUTTON */}
-            <motion.a
+            {/* <motion.a
               href="tel:+917631546903" // 🔥 Replace with your real number
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-4 rounded-full bg-gray-900 text-white font-semibold shadow-lg hover:bg-gray-800 transition"
             >
               Enquiry Now
-            </motion.a>
+            </motion.a> */}
           </div>
         </div>
 
