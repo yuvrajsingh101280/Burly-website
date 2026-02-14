@@ -36,7 +36,7 @@ const plans = [
   // },
   {
     title: "Growth Plan(Distributor)",
-    price: "₹99,000",
+    price: "₹70,000",
     highlight: true,
     badge: "Most Preferred",
     features: [
