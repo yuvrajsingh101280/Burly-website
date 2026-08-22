@@ -30,7 +30,7 @@ export default function Distributorship() {
             start: "top 75%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
 
       /* ================= IMAGE REVEAL (NO SCRUB) ================= */
@@ -48,7 +48,7 @@ export default function Distributorship() {
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -141,7 +141,7 @@ export default function Distributorship() {
                 <span className="font-semibold text-gray-900">
                   Investment Range:
                 </span>{" "}
-                ₹49,000 – ₹3,00,000 (based on selected plan & territory)
+                ₹31,000 – ₹199000 (based on selected plan & territory)
               </p>
             </div>
           </div>
