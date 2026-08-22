@@ -141,12 +141,12 @@ export default function Footer() {
 
           <p className="text-sm text-gray-600 mt-4">
             📞{" "}
-            <a href="tel:879975553" className="hover:underline">
+            <a href="tel:8799745553" className="hover:underline">
               8799745553
             </a>
             ,{" "}
             <a href="tel:7631546903" className="hover:underline">
-              763156903
+              7631546903
             </a>
           </p>
 
