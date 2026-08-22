@@ -14,8 +14,8 @@ const products = [
     description:
       "Powerful toilet cleaning formula that removes tough stains, kills germs, and eliminates odor. Available in 250 ml, 500 ml, 1 Ltr, and 5 Ltr packs for home and commercial use.",
     variants: [
-      { label: "250 ml", price: "₹42", image: assets.Toilet250 },
-      { label: "500 ml", price: "₹86", image: assets.Toilet1 },
+      { label: "250 ml", price: "₹49", image: assets.Toilet250 },
+      { label: "500 ml", price: "₹99", image: assets.Toilet1 },
       { label: "1 Ltr", price: "₹149", image: assets.Toilet1 },
       { label: "5 Ltr", price: "₹449", image: assets.Toilet5 },
     ],
@@ -102,7 +102,7 @@ export default function Products() {
           trigger: sectionRef.current,
           start: "top 75%",
         },
-      }
+      },
     );
   }, []);
 
