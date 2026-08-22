@@ -8,19 +8,19 @@ import { CheckCircle } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const plans = [
-  {
-    title: "Starter Plan(Dealer)",
-    price: "₹25,000",
-    features: [
-      "Inventory : Selected Products",
-      "Area/Territory : Local Area",
-      "Role : Dealer",
-      "Transportation : Paid by Dealer",
-      "Staff Support : Self-Managed",
-      "Branding Kit : Flex & Posters",
-      "Extra Margin : Retail Margin",
-    ],
-  },
+  // {
+  //   title: "Starter Plan(Dealer)",
+  //   price: "₹25,000",
+  //   features: [
+  //     "Inventory : Selected Products",
+  //     "Area/Territory : Local Area",
+  //     "Role : Dealer",
+  //     "Transportation : Paid by Dealer",
+  //     "Staff Support : Self-Managed",
+  //     "Branding Kit : Flex & Posters",
+  //     "Extra Margin : Retail Margin",
+  //   ],
+  // },
   // {
   //   title: "Starter Plan()",
   //   price: "₹49,000",
@@ -36,15 +36,15 @@ const plans = [
   // },
   {
     title: "Growth Plan(Distributor)",
-    price: "₹70,000",
+    price: "₹31,000",
     highlight: true,
     badge: "Most Preferred",
     features: [
-      "Inventory : 5 cartons of all products",
+      "Inventory : Selected products",
       "Area/Territory : Single District",
       "Role : Distributor",
       "Transportation : Free Transportation",
-      "Staff Support : Dedicated Salesperson",
+      "Staff Support : Self Managed",
       "Branding Kit : Light Board & Posters",
       "Extra Margin : Wholesale + District Rights",
     ],
@@ -74,7 +74,7 @@ const plans = [
       "Transportation : Priority Free Delivery",
       "Staff Support : Senior Territory Manager",
       "Branding Kit : Full Branding + LED Board",
-      "Extra Margin : Flat 8% Extra Discount On Distributor Price",
+      "Extra Margin : Flat 6% Extra Discount On Distributor Price",
     ],
   },
   // {
@@ -136,7 +136,7 @@ export default function DistributorInvestment() {
         </div>
 
         {/* PLANS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {plans.map((plan, i) => (
             <div
               key={i}

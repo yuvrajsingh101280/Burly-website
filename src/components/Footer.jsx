@@ -16,7 +16,7 @@ export default function Footer() {
         stagger: 0.12,
         duration: 0.8,
         ease: "power3.out",
-      }
+      },
     );
   }, []);
 
@@ -141,12 +141,12 @@ export default function Footer() {
 
           <p className="text-sm text-gray-600 mt-4">
             📞{" "}
-            <a href="tel:7602380891" className="hover:underline">
-              7602380891
+            <a href="tel:879975553" className="hover:underline">
+              8799745553
             </a>
             ,{" "}
             <a href="tel:7631546903" className="hover:underline">
-              7631546903
+              763156903
             </a>
           </p>
 
