@@ -4,7 +4,7 @@ export default function WhatsAppFloat() {
 
   return (
     <a
-      href={`https://wa.me/917631546903?text=${encodeURIComponent(message)}`}
+      href={`https://wa.me/8799745553?text=${encodeURIComponent(message)}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Burly on WhatsApp"
